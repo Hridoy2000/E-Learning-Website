@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image:linear-gradient(to left, rgba(255,0,0,0), rgb(223, 82, 26));
+    background-size: 280%;
+    background-position: -400px 0px;
+}
+.head{
+    margin-top: 07%;
+}
+.head h1{
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-style: bold;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+.head p{
+    text-align: center;
+    color: rgb(79, 12, 167);
+    font-family: sans-serif;
+    font-size: 20px;
+    font-style: bold;
+    padding-top: 10px ;  
+}
+.box{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #000000;
+    text-align: center;
+}
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-size: 100;
+
+}
+.box a{
+    text-decoration: none;
+}
+.box a:link {
+    color: red;
+  }
+.box a:visited {
+    color: white;
+  }
+.box a:hover {
+    color: rgb(89, 1, 230);
+  }
+.box a:active {
+    color: blue;
+  }
+.box input[type = "text"], .box input[type = "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2404db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.box input[type = "text"]:focus, .box input[type="password"]:focus{
+    width: 280px;
+    border-color: #dd0404;
+}
+.create{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #0f00e7;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.create:hover{
+    background: #df0000;
+}
