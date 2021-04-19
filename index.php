@@ -1,66 +1,51 @@
-<?php
-   session_start();
-   $connect=mysqli_connect("localhost","root","","e_learn");
-   if(isset($_POST['login'])){
-    $userName=$_POST["username"];
-    $PassWord=$_POST["password"];
-   }
+<?php 
+include 'config.php';
+session_start();
+error_reporting(0);
+if (isset($_SESSION['username'])) {
+    header("Location:welcome.php");
+}
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$password = ($_POST['password']);
+	$sql = "SELECT * FROM cse417 WHERE email='$email'";
+	$result = mysqli_query($conn, $sql);
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['username'] = $row['username'];
+		header("Location: welcome.php");
+	} else {
+		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+	}
+}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-    <link rel="stylesheet" href="style.css">
-    <title>Log In</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Log In </title>
 </head>
 <body>
-    <div class="row"> 
-        <div class="col-lg-5 m-auto">
-            <div class="card  bg-dark mt-5">
-            <!--CARD HEADING--> 
-                <div class="card-title text-center mt-3"> 
-                    <h1 class="text-danger">Road To Approach Become A Data Scientist</h1> 
-                </div>
-            <!--CARD Information Box--> 
-                <div class="card-body"> 
-                    <form action="index.php" method="POST" class="box">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                            <!--Info Icon--> 
-                                <span class="input-group-text">
-                                    <i class="fa fa-user fa-2x"></i>
-                                </span>
-                            </div>
-                            <!--Info Box--> 
-                            <input type="text" class="form-control py-4" placeholder="Type Your User Name">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                            <!--Info Icon--> 
-                                <span class="input-group-text">
-                                    <i class="fa fa-lock fa-2x"></i>
-                                </span>
-                            </div>
-                            <!--Info Box--> 
-                            <input type="password" class="form-control py-4" placeholder="Type Your Password">
-                        </div>
-                        <button name="login" class="btn btn-success">Log In</button>
-                        <p class="float-right text-white"><input type="checkbox"> Remember Me</p>
-                        <br>
-                        <a href="#" class="text-danger">Forgot Password?</a>
-                        <br>
-                        <a href="registration.php" target="_blank" class="new">Create New Account.</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>  
+	<div class="container">
+		<form action="" method="POST" class="login-email">
+			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
+			<div class="input-group">
+				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+			</div>
+			<div class="input-group">
+				<button name="submit" class="btn">Login</button>
+			</div>
+			<p class="login-register-text">Don't have an account? <a href="register.php">Register Here</a>.</p>
+		</form>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
