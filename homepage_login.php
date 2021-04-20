@@ -22,14 +22,13 @@
             </div>
             <div class="menu_name">
                 <ul class="ul_nav">
-                <li class="item"><a class="link active" aria-current="page" href="homepage.php">Home</a></li>
+                <li class="item"><a class="link active" aria-current="page" href="homepage_login.php">Home</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\artificial_intellegence\introduction_ai.php">Artificial Intellegence</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\machine learning\Introduction_ml.php">Machine Learning</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\Deep_learning\introduction_dl.php">Deep Learning</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\Robotics\introduction_robotic.php">Robotics</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\python\introduction_py.php">Python</a></li>
-                <li class="item signUp"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\sign_up\sign_up.php">Sign Up</a></li>
-                <li class="item signIn"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\sign_in\sign_in.php">Login</a></li>
+                <li class="item signout"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\sign_in\sign_in.php">LogOut</a></li>
 
 
                 </ul>

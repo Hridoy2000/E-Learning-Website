@@ -87,6 +87,11 @@ background: rgb(234, 247, 204);
     
 
 }
+.signout{
+    float: right;
+    margin-right: 10px;
+
+}
 
 
 .main_body{

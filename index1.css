@@ -73,5 +73,6 @@ input:focus, textarea:focus, select:focus{
   right: 20%;
   position: absolute;
   z-index: 2;
+  text-align: center;
   
 }
