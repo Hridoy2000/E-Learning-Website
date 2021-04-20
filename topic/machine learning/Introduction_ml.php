@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link href="\E-Learning-Website\homepage.css" rel="stylesheet" ">
-   <title>Mchine Learning</title>
+    <link href="\E-Learning-Website\home.css" rel="stylesheet" ">
+    <link href="deep_Learning.css" rel="stylesheet" ">
+   <title>Machine Learning</title>
 </head>
 <body>
     <div class=" Main_wrapper">
     <div class="nav_bar">
         <div class="logo">
-            <img src="images\innovation_icon1.png" class="nav_bar_icon">
+            <img src="\E-Learning-Website\images\innovation_icon1.png" class="nav_bar_icon">
             <h5 class="nav_bar_logo_name">AI LEARNERS</h5>
         </div>
         <div class="menu_name">
             <ul class="ul_nav">
                 <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\homepage.php">Home</a></li>
-                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\homepage templete\artificial_intellegence\introduction_ai.php">Artificial Intellegence</a></li>
+                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\artificial_intellegence\introduction_ai.php">Artificial Intellegence</a></li>
                 <li class="item"><a class="link active" aria-current="page" href="Introduction_ml.php">Machine Learning</a></li>
-                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\homepage templete\Deep_learning\introduction_dl.php">Deep Learning</a></li>
-                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\homepage templete\Robotics\introduction_robotic.php">Robotics</a></li>
-                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\homepage templete\python\introduction_py.php">Python</a></li>
-
+                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\Deep_learning\introduction_dl.php">Deep Learning</a></li>
+                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\Robotics\introduction_robotic.php">Robotics</a></li>
+                <li class="item"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\python\introduction_py.php">Python</a></li>
+                <li class="item signUp"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\sign_up\sign_up.php">Sign Up</a></li>
+                <li class="item signIn"><a class="link active" aria-current="page" href="\E-Learning-Website\topic\sign_in\sign_in.php">Login</a></li>
             </ul>
         </div>
     </div>
@@ -32,33 +34,52 @@
         <div class="left_body">
             <div class="left_body_wrapper">
 
-                <h6 class="topic_header">Machine Learning Topics</h6>
-
+                <h6 class="topic_header">Deep Learning Topics</h6>
+                <a href="Introduction_dl.php" class="topic">Introduction</a>
                 <a href="Learning_path.php" class="topic">Learning Path</a>
-                <a href="Introduction.php" class="topic">Introduction</a>
-                <a href="Basic.php" class="topic">Basic</a>
-                <a href="classification_and_regression.php" class="topic">Classifiaction & Regression</a>
-                <a href="Algorithm learning.php" class="topic">Algorithm Basic</a>
-                <a href="Linear_regression.php" class="topic">Linear Regression</a>
-                <a href="Logistic_regression.php" class="topic">Logistic Regression</a>
-                <a href="Decision_Tree.php" class="topic">Decision Tree</a>
-                <a href="SVM.php" class="topic">SVM</a>
-                <a href="Naive_Bayes.php" class="topic">Naive Bayes</a>
-                <a href="kNN.php" class="topic">kNN</a>
-                <a href="K_Means.php" class="topic">K-Means</a>
-                <a href="Random Forest.php" class="topic">Random Forest</a>
-                <a href="Dimensionality_Reduction_Algorithms.php" class="topic">Dimensionality Reduction Algorithms</a>
-                <a href="Gradient_Boosting_algorithms.php" class="topic">Gradient Boosting algorithms</a>
-                <a href="K_Means.php" class="topic">K-Means</a>
-
-
+                <a href="single_neuron.php" class="topic">A Single Neuron</a>
+                <a href="Deep_neural_networks.php" class="topic">Deep Neural Networks</a>
+                <a href="Stochastic_gradient_descent.php" class="topic">Stochastic Gradient Descent</a>
+                <a href="overfitting_underfitting.php" class="topic">Overfitting and Underfitting</a>
+                <a href="Dropout.php" class="topic">Dropout</a>
+                <a href="batch_normalization.php" class="topic">Batch Normalization</a>
+                <a href="Binary_classification.php" class="topic">Binary Classification</a>
             </div>
         </div>
         <div class="middle_body">
-            
+       <h1> Welcome to Machine Learning! </h1>
+<p>Machine learning is a method of data analysis that automates analytical model building. It is a branch of   artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention.</p>       
+<h2>Evolution of machine learning</h2>
+<p>Because of new computing technologies, machine learning today is not like machine learning of the past. It was born from pattern recognition and the theory that computers can learn without being programmed to perform specific tasks; researchers interested in artificial intelligence wanted to see if computers could learn from data. The iterative aspect of machine learning is important because as models are exposed to new data, they are able to independently adapt. They learn from previous computations to produce reliable, repeatable decisions and results. It’s a science that’s not new – but one that has gained fresh momentum.</p>
+<p>While many machine learning algorithms have been around for a long time, the ability to automatically apply complex mathematical calculations to big data – over and over, faster and faster – is a recent development. Here are a few widely publicized examples of machine learning applications you may be familiar with:</p>
+
+<ul> 
+    <li>The heavily hyped, self-driving Google car? The essence of machine learning.</li> 
+    <li>Online recommendation offers such as those from Amazon and Netflix? Machine learning applications for everyday life.</li>
+    <li>Knowing what customers are saying about you on Twitter? Machine learning combined with linguistic rule creation.</li>
+    <li>Fraud detection? One of the more obvious, important uses in our world today.</li>
+</ul>
+  <h2>Why is machine learning important?</h2>
+   <p>Resurging interest in machine learning is due to the same factors that have made data mining and Bayesian analysis more popular than ever. Things like growing volumes and varieties of available data, computational processing that is cheaper and more powerful, and affordable data storage.</p>
+<p>All of these things mean it's possible to quickly and automatically produce models that can analyze bigger, more complex data and deliver faster, more accurate results – even on a very large scale. And by building precise models, an organization has a better chance of identifying profitable opportunities – or avoiding unknown risks.</p>
 
 
-        </div>
+
+   <h2>What's required to create good machine learning systems</h2>
+   <ul> 
+    <li>Data preparation capabilities.</li> 
+    <li>Algorithms – basic and advanced.</li>
+    <li>Automation and iterative processes.</li>
+    <li>Scalability.</li>
+    <li>Ensemble modeling.</li>
+</ul>
+
+<br><br>
+
+
+
+
+</div>
         <div class="right_body">
             <p>this is right side</p>
             <p>this is right side</p>
@@ -77,7 +98,6 @@
                 <a href="#"><img src="\E-Learning-Website\images\twitter_icon.png" class="footer_icon"></a>
                 <a href="#"><img src="\E-Learning-Website\images\youtube_icon.png" class="footer_icon"></a>
                 <a href="#"><img src="\E-Learning-Website\images\instagram_icon.png" class="footer_icon"></a>
-
 
 
 
