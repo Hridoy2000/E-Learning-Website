@@ -1,6 +1,6 @@
 <?php 
 include_once('config.php');
-$query="SELECT * from cse417 WHERE $email='email'";
+$query="SELECT * from cse417";
 $result=mysqli_query($conn,$query);
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
 </head>
 <body>
 <div class="container-fluid bg-light">
-        <div class="logo">
+        <div class=".navbar-brand">
           <img src="images\innovation_icon1.png" class="navbar-brand">
             <?php echo "<h4>Welcome ". $_SESSION['username'] . "</h4>"; ?>
         </div>   
@@ -28,13 +28,13 @@ if (!isset($_SESSION['username'])) {
         <?php
             while($rows=mysqli_fetch_assoc($result)){
                 ?>
-                    <label for=""><h3>ID:</h3></label><h3><?php echo $rows['id']?> </h3>
+                    <label for="">ID:</label><?php echo $rows['id']?>
                     <br>
-                    <label for=""><h3>Username:</h3></label><h3> <?php echo $rows['username']?></h3>
+                    <label for="">Username:</label><?php echo $rows['username']?>
                     <br>
-                    <label for=""><h3>Email:</h3></label><h3> <?php echo $rows['email']?></h3>
+                    <label for="">Email:</label><?php echo $rows['email']?>
                     <br>
-                    <label for=""><h3>Password:</h3></label><h3> <?php echo $rows['password']?></h3>
+                    <label for="">Password:</label> <?php echo $rows['password']?>
                     <br>
         <?php
              }
@@ -42,7 +42,6 @@ if (!isset($_SESSION['username'])) {
         </div>
     </table>
 </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
