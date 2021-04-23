@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+{% include 'header1.html' %}
+{% include 'navbar.html' %}
+
+ <div class="fake_pradiction">
+	<h2>Fake News Detector</h2>
+
+    <form action="{{ url_for('predict1')}}" method="POST">
+    	<textarea class="prediction_text" name="message"  required="required" style="font-size: 18pt"></textarea>
+		<br> </br>
+        <button type="submit" class="Prediction_button">Predict</button>
+
+        	<div class="results">
+
+
+	{% if pred == ['FAKE']%}
+	<h2 style="color:red;">Looking Spam⚠️News </h2>
+	{% elif pred == ['REAL']%}
+				<h2 style="color:green;"><b>Looking Real News</b></h2>
+	{% endif %}
+			
+	</div>
+    </form>
+
+</div>
+{% include 'footer.html' %} 

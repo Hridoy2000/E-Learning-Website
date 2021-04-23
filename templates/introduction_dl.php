@@ -32,7 +32,7 @@ connections these neurons can form.</p>
     As an example, given the stock prices of the past week as input, my deep learning algorithm will try to predict the stock price of the next day. <br>
 Given a large dataset of input and output pairs, a deep learning algorithm will try to minimize the difference between its prediction and expected output.
  By doing this, it tries to learn the association/pattern between given inputs and outputs — this in turn allows a deep learning model to generalize to inputs that it hasn’t seen before.</p>
-<img class="image_introduction"src="animation1.gif" alt="layer connections">
+<img class="image_introduction"src="{{url_for('static', filename='computer_notebook.jpg')}}" alt="layer connections">
 <h2>How Do Deep Learning algorithms “learn”?</h2>
 <p>Deep Learning Algorithms use something called a neural network to find associations between a set of inputs and outputs. The basic structure is seen below:</p>
 <img src="neural_network.jfif" alt="no image found" class="image_introduction">

@@ -7,8 +7,8 @@
             <div class="left_body_wrapper">
 
                 <h6 class="topic_header">Project Name</h6>
-                <a href="{{ url_for('forest_fire')}}" class="topic">Forest Fire prediction</a>
-                <a href="Learning_path_ml.php" class="topic">Learning Path</a>
+                <a href="{{ url_for('forest_fire')}}" class="topic">Forest Fire Prediction</a>
+                <a href="{{ url_for('Fake_news')}}" class="topic">Fake News Detection</a>
                 <a href="Data_preprocessing.php" class="topic">Data Preprocessing</a>
                 <a href="Features_scaling.php" class="topic">Features Scaling</a>
                 <a href="Gradient_descent.php" class="topic">Gradient Descent</a>

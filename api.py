@@ -29,7 +29,7 @@ def is_logged_in(f):
     return wrap
     
 
-model=pickle.load(open('model.pkl','rb'))
+
 @app.route('/')
 
 def homepage():
@@ -142,6 +142,10 @@ def signUp():
 def project():
     return render_template('project.php')
 
+
+## forest fire prediction
+
+model=pickle.load(open('model.pkl','rb'))
 @app.route('/forest_fire',methods=['POST','GET'])
 def forest_fire(): 
     return render_template('forest_fire.php')
@@ -163,9 +167,41 @@ def predict():
 def code_description(): 
     return render_template('code_description.html')
 
+#fake news prediction
+loaded_model = pickle.load(open('model1.pkl', 'rb'))
 
+@app.route('/Fake_news',methods=['POST','GET'])
+def Fake_news(): 
+    return render_template('fake_news.html')    
 
+@app.route('/predict1',methods=['POST','GET'])
+def predict1(): 
+    from sklearn.model_selection import train_test_split
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.linear_model import PassiveAggressiveClassifier
+    from sklearn.metrics import accuracy_score, confusion_matrix
+    import pandas as pd
 
+    dataframe = pd.read_csv('news.csv')
+
+    x = dataframe['text']
+    y = dataframe['label']
+
+    x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=0)
+    y_train
+
+    tfvect = TfidfVectorizer(stop_words='english',max_df=0.7)
+    tfid_x_train = tfvect.fit_transform(x_train)
+    tfid_x_test = tfvect.transform(x_test)
+
+    classifier = PassiveAggressiveClassifier(max_iter=50)
+    classifier.fit(tfid_x_train,y_train)
+    m=request.form['message']
+    input_data = [m]
+    vectorized_input_data = tfvect.transform(input_data)
+    prediction = classifier.predict(vectorized_input_data)
+    print(prediction)
+    return render_template('fake_news.html',pred=prediction,b="")
 
 
 #### Ai #######
@@ -198,6 +234,13 @@ def  Binary_classification():
 
  
 #########
+
+@app.route('/quiz',methods=['POST','GET'])
+def  quiz(): 
+    return render_template('quize.html')
+
+
+
 
 if __name__ == '__main__':
     app.secret_key='secret123'

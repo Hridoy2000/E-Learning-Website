@@ -27,8 +27,6 @@ final=[np.array(inputt)]
 
 b = log_reg.predict_proba(final)
 
-
 pickle.dump(log_reg,open('model.pkl','wb'))
 model=pickle.load(open('model.pkl','rb'))
-
 
