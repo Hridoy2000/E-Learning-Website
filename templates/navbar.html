@@ -15,10 +15,10 @@
         <li class="item"><a class="link active" aria-current="page" href="{{ url_for('robotics') }}">Robotics</a></li>
         <li class="item"><a class="link active" aria-current="page" href="{{ url_for('python') }}">Python</a></li>
         <li class="item"><a class="link active" aria-current="page" href="{{ url_for('project') }}">Project Implementation</a></li>
-        {% if session.logged_in %}
+{% if session.logged_in %}
         <li class="item signIn"><a class="link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
   {% else %}
-  <li class="item signUp"><a class="link active" aria-current="page" href="{{ url_for('signUp') }}">Sign Up</a></li>
+        <li class="item signUp"><a class="link active" aria-current="page" href="{{ url_for('signUp') }}">Sign Up</a></li>
         <li class="item signIn"><a class="link active" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
   {% endif %}
         

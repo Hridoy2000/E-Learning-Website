@@ -1,8 +1,8 @@
 {% include 'header.html' %}
-    {% include 'navbar.html' %}
-
+{% include 'header1.html' %}
+{% include 'navbar.html' %}
         <div class="main_body">     
-        <div class="search_bar">
+            <div class="search_bar">
                 <div class="search_bar_image">
 
                 </div>
@@ -14,6 +14,8 @@
                  </form>
                  <h2 class="Info">Learn Without Limits <br> Build skills with courses, certificates, and degrees online</h2>
             </div>
-            {% include 'footer.html' %}          
+        </div>
+
+    {% include 'footer.html' %}          
             
         
