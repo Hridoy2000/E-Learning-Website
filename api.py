@@ -168,11 +168,34 @@ def code_description():
 
 
 
-###########
- 
+#### Ai #######
 
+@app.route('/Learning_path_dl',methods=['POST','GET'])
+def  Learning_path_dl(): 
+    return render_template('Learning_path_dl.html')
 
- 
+@app.route('/single_neuron',methods=['POST','GET'])
+def  single_neuron(): 
+    return render_template('single_neuron.html')
+@app.route('/Deep_neural_networks',methods=['POST','GET'])
+def  Deep_neural_networks(): 
+    return render_template('Deep_neural_networks.html')
+@app.route('/Stochastic_gradient_descent',methods=['POST','GET'])
+def  Stochastic_gradient_descent(): 
+    return render_template('Stochastic_gradient_descent.html')
+@app.route('/overfitting_underfitting',methods=['POST','GET'])
+def  overfitting_underfitting(): 
+    return render_template('overfitting_underfitting.html')
+@app.route('/Dropout',methods=['POST','GET'])
+def  Dropout(): 
+    return render_template('Dropout.html')
+@app.route('/batch_normalization',methods=['POST','GET'])
+def  batch_normalization(): 
+    return render_template('batch_normalization.html')
+@app.route('/Binary_classification',methods=['POST','GET'])
+def  Binary_classification(): 
+    return render_template('Binary_classification.html')
+
  
 #########
 
