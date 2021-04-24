@@ -48,46 +48,40 @@
             </div>
         </div>
         <div class="middle_body">
-       <h1> Welcome to Deep Learning! </h1>
-<p> Welcome to our Introduction to Deep Learning course! You&#39;re about to learn all you need to get
-started building your own deep neural networks. Using Keras and Tensorflow you&#39;ll learn how to: </p>
-<ul> 
-    <li>create a fully-connected neural network architecture</li> 
-    <li>apply neural nets to two classic ML problems: regression and classification</li>
-    <li>train neural nets with stochastic gradient descent, and</li>
-    <li>improve performance with dropout, batch normalization, and other techniques</li>
-</ul>
-    <h1>What is Deep Learning?</h1>
-    <p>Some of the most impressive advances in artificial intelligence in recent years have been in the field
-of deep learning. Natural language translation, image recognition, and game playing are all tasks
-where deep learning models have neared or even exceeded human-level performance.</p>
-<p>So what is deep learning? Deep learning is an approach to machine learning characterized by deep
-stacks of computations. This depth of computation is what has enabled deep learning models to
-disentangle the kinds of complex and hierarchical patterns found in the most challenging real-world
-datasets.</p>
-<p>Through their power and scalability neural networks have become the defining model of deep
-learning. Neural networks are composed of neurons, where each neuron individually performs only a
-simple computation. The power of a neural network comes instead from the complexity of the
-connections these neurons can form.</p>
-<h2>Building the Intuition</h2>
-<p>Generally speaking, deep learning is a machine learning method that takes in an input X, and uses it to predict an output of Y. 
-    As an example, given the stock prices of the past week as input, my deep learning algorithm will try to predict the stock price of the next day. <br>
-Given a large dataset of input and output pairs, a deep learning algorithm will try to minimize the difference between its prediction and expected output.
- By doing this, it tries to learn the association/pattern between given inputs and outputs — this in turn allows a deep learning model to generalize to inputs that it hasn’t seen before.</p>
-<img class="image_introduction"src="animation1.gif" alt="layer connections">
-<h2>How Do Deep Learning algorithms “learn”?</h2>
-<p>Deep Learning Algorithms use something called a neural network to find associations between a set of inputs and outputs. The basic structure is seen below:</p>
-<img src="neural_network.jfif" alt="no image found" class="image_introduction">
-<p>A neural network is composed of input, hidden, and output layers — all of which are composed of “nodes”. Input layers take in a numerical representation of data (e.g. images with pixel specs), output layers output predictions, while hidden layers are correlated with most of the computation.</p>
-<img src="activation_function.png" alt="not found image">
-<p>I won’t go too in depth into the math, but information is passed between network layers through the function shown above. The major points to keep note of here are the tunable weight and bias parameters — represented by w and b respectively in the function above. These are essential to the actual “learning” process of a deep learning algorithm.</p>
-<p>After the neural network passes its inputs all the way to its outputs, the network evaluates how good its prediction was (relative to the expected output) through something called a loss function. As an example, the “Mean Squared Error” loss function is shown below.</p>
-<img src="function.png" alt="not found">
-<h5>Y hat represents the prediction, while Y represents the expected output. A mean is used if batches of inputs and outputs are used simultaneously (n represents sample count)</h5>
-<p>The goal of my network is ultimately to minimize this loss by adjusting the weights and biases of the network. In using something called “back propagation” through gradient descent, the network backtracks through all its layers to update the weights and biases of every node in the opposite direction of the loss function — in other words, every iteration of back propagation should result in a smaller loss function than before.</p>
-<p>Without going into the proof, the continuous updates of the weights and biases of the network ultimately turns it into a precise function approximator — one that models the relationship between inputs and expected outputs.</p>        
-<h2>So why is it called “Deep” Learning?</h2>
-<p>The “deep” part of deep learning refers to creating deep neural networks. This refers a neural network with a large amount of layers — with the addition of more weights and biases, the neural network improves its ability to approximate more complex functions.</p>
+       <h1> Deep Neural Networks </h1>
+       <h2>Introduction</h2>
+<p> 
+In this lesson we're going to see how we can build neural networks capable of learning the complex kinds of relationships deep neural nets are famous for.
+The key idea here is modularity, building up a complex network from simpler functional units. We've seen how a linear unit computes a linear function -- now we'll see how to combine and modify these single units to model more complex relationships.
+</p>
+
+<h2>Layers</h2>
+   <p> Neural networks typically organize their neurons into layers. When we collect together linear units having a common set of inputs we get a dense layer.</p>
+   <img class="image_introduction"src="{{url_for('static', filename='pic5.PNG')}}" alt="layer connections">
+   <p>You could think of each layer in a neural network as performing some kind of relatively simple transformation. Through a deep stack of layers, a neural network can transform its inputs in more and more complex ways. In a well-trained neural network, each layer is a transformation getting us a little bit closer to a solution.
+   </p>
+<h2>The Activation Function</h2>
+    <p>It turns out, however, that two dense layers with nothing in between are no better than a single dense layer by itself. Dense layers by themselves can never move us out of the world of lines and planes. What we need is something nonlinear. What we need are activation functions </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic6.PNG')}}" alt="layer connections">
+     <p>Without activation functions, neural networks can only learn linear relationships. In order to fit curves, we'll need to use activation functions.
+    An activation function is simply some function we apply to each of a layer's outputs (its activations).
+    </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic7.PNG')}}" alt="layer connections">
+    <p>The rectifier function has a graph that's a line with the negative part "rectified" to zero. Applying the function to the outputs of a neuron will put a bend in the data, moving us away from simple lines.
+     When we attach the rectifier to a linear unit, we get a rectified linear unit or ReLU. (For this reason, it's common to call the rectifier function the "ReLU function".) Applying a ReLU activation to a linear unit means the output becomes max(0, w * x + b), which we might draw in a diagram like:
+    </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic8.PNG')}}" alt="layer connections">
+
+
+<h2>Stacking Dense Layers</h2>
+   <p>Now that we have some nonlinearity, let's see how we can stack layers to get complex data transformations.</p>
+   <img class="image_introduction"src="{{url_for('static', filename='pic9.PNG')}}" alt="layer connections">
+   <p>The layers before the output layer are sometimes called hidden since we never see their outputs directly.
+   Now, notice that the final (output) layer is a linear unit (meaning, no activation function). That makes this network appropriate to a regression task, where we are trying to predict some arbitrary numeric value. Other tasks (like classification) might require an activation function on the output.
+   </p>
+<h2>Building Sequential Models</h2>
+  <p>The Sequential model we've been using will connect together a list of layers in order from first to last: the first layer gets the input, the last layer produces the output. This creates the model in the figure above:</p>
+  <img class="image_introduction"src="{{url_for('static', filename='pic10.PNG')}}" alt="layer connections">
 <br><br>
 
 
