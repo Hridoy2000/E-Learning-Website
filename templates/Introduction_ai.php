@@ -1,7 +1,8 @@
 {% include 'header.html' %}
+<title>Artificial Intelligence</title>
 {% include 'header1.html' %}
-{% include 'navbar.html' %}
-    <div class="main_body">
+
+<div class="main_body">
 
         <div class="left_body">
             <div class="left_body_wrapper">
@@ -55,16 +56,13 @@ It is believed that AI is not a new technology, and some people says that as per
 <br><br>
 
 
-
+<form action="/quiz" method="POST">
+<button type = "submit" class="quiz_btn" > Go to Quiz</button>
+</form>
 
 </div>
         <div class="right_body">
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-
+      
 
         </div>
     </div>

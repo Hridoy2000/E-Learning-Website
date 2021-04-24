@@ -1,6 +1,6 @@
-{% include 'header.html' %}
-{% include 'header1.html' %}
-{% include 'navbar.html' %}
+{% include 'header.html' %}  
+<title>Machine Learning</title>
+{% include 'header1.html' %} 
     <div class="main_body">
 
         <div class="left_body">
@@ -48,19 +48,20 @@
 
 <br><br>
 
-
+<form action="/quiz" method="POST">
+<button type = "submit" class="quiz_btn" > Go to Quiz</button>
+</form>
 
 
 </div>
         <div class="right_body">
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
+         
 
 
         </div>
     </div>
+    {% include 'footer.html' %}         
+    </div>
+</body>
 
-    {% include 'footer.html' %}    
+</html> 

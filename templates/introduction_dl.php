@@ -1,6 +1,6 @@
-{% include 'header.html' %}
-{% include 'header1.html' %}
-{% include 'navbar.html' %}
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
     <div class="main_body">
 
     {% include 'dl_topic.html' %}
@@ -48,19 +48,25 @@ Given a large dataset of input and output pairs, a deep learning algorithm will 
 <p>The “deep” part of deep learning refers to creating deep neural networks. This refers a neural network with a large amount of layers — with the addition of more weights and biases, the neural network improves its ability to approximate more complex functions.</p>
 <br><br>
 
+<form action="/quiz" method="POST">
+<button type = "submit" class="quiz_btn" > Go to Quiz</button>
+</form>
+
+
 
 
 
 </div>
         <div class="right_body">
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
+          
 
-
+        
         </div>
+
     </div>
 
-    {% include 'footer.html' %}    
+    {% include 'footer.html' %}         
+    </div>
+</body>
+
+</html> 

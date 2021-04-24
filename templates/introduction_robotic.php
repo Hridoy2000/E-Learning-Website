@@ -1,6 +1,6 @@
-{% include 'header.html' %}
+{% include 'header.html' %}  
+<title>Robotics</title>
 {% include 'header1.html' %}
-{% include 'navbar.html' %}
     <div class="main_body">
 
         <div class="left_body">
@@ -35,19 +35,20 @@ Robots are aimed at manipulating the objects by perceiving, picking, moving, mod
 </ul>
 <br><br>
 
-
+<form action="/quiz" method="POST">
+<button type = "submit" class="quiz_btn" > Go to Quiz</button>
+</form>
 
 
 </div>
         <div class="right_body">
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
-            <p>this is right side</p>
+           
 
 
         </div>
     </div>
+    {% include 'footer.html' %}         
+    </div>
+</body>
 
-    {% include 'footer.html' %}    
+</html> 

@@ -31,7 +31,6 @@ def is_logged_in(f):
 
 
 @app.route('/')
-
 def homepage():
     return render_template('homepage.php')
 @app.route('/deeplearning',methods=['POST','GET'])
@@ -89,7 +88,7 @@ def login():
             # Get stored hash
             data = cur.fetchone()
             password = data['password']
-            print(password+"\n"+password_candidate)
+           
             # Compare Passwords
             if ((password_candidate == password)):
                
@@ -107,7 +106,6 @@ def login():
         else:
             error = 'Username not found'
             return render_template('login.php', error=error)
-
     return render_template('login.php')
 
 
@@ -152,10 +150,9 @@ def forest_fire():
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
-    int_features=[int(x) for x in request.form.values()]
-    final=[np.array(int_features)]
-    print(int_features)
-    print(final)
+    int_features=[int(x) for x in request.form.values()] #list
+    final=[np.array(int_features)]  # numpy array
+    
     prediction=model.predict_proba(final)
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
@@ -163,11 +160,13 @@ def predict():
         return render_template('forest_fire.php',pred='Your Forest is in Danger. Probability of fire occuring is {}'.format(output),b="")
     else:
         return render_template('forest_fire.php',pred='Your Forest is safe. Probability of fire occuring is {}'.format(output),b="")
+
 @app.route('/code_description',methods=['POST','GET'])
 def code_description(): 
     return render_template('code_description.html')
 
 #fake news prediction
+
 loaded_model = pickle.load(open('model1.pkl', 'rb'))
 
 @app.route('/Fake_news',methods=['POST','GET'])
@@ -196,13 +195,15 @@ def predict1():
 
     classifier = PassiveAggressiveClassifier(max_iter=50)
     classifier.fit(tfid_x_train,y_train)
-    m=request.form['message']
-    input_data = [m]
-    vectorized_input_data = tfvect.transform(input_data)
-    prediction = classifier.predict(vectorized_input_data)
-    print(prediction)
-    return render_template('fake_news.html',pred=prediction,b="")
-
+    if request.method == 'POST':
+        m=request.form['message']
+        input_data = [m]
+        vectorized_input_data = tfvect.transform(input_data)
+        prediction = classifier.predict(vectorized_input_data)
+        print(prediction)
+        return render_template('fake_news.html', pr=prediction)
+    else:
+        return render_template('fake_news.html', pr="Something went wrong")
 
 #### Ai #######
 

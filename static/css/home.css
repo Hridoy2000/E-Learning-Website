@@ -8,98 +8,84 @@ input:focus, textarea:focus,.input_email_for_sign_up:focus ,select:focus{
 .Main_wrapper{
     width: 100%;
     height: 100%;
-     
-}
-margin-left: 20px;
-/* nav bar */
-.nav_bar{
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: block;
-height: 100%;
-width: 100%;
-background: rgb(234, 247, 204);
-
-
-}
-.logo{     
-    float: left;
-    width: 20%;
-    height: 100%;
-    
-}
-.nav_bar_icon{
-    float: left;
-    height: 50px;
-}
-.nav_bar_logo_name{
-    margin: 0px;
-    text-align: center;
-    margin-top: 10px;
-    margin-left: 10px;
-    float: left;
-   
-}
-.menu_name{
-    float: left;
-    width: 80%;
-    height: 100%;
-}
-.ul_nav{
-    list-style: none;
-}
-.item{
-    text-align: center;
-    overflow: hidden;
-    font: 14px garamond  ;
-    float: left;
-    font-weight: bold;
-    margin-left: 8px;
-    height: auto;
-    text-transform: capitalize;
-    border-radius: 4px;
-    
-}
-.item:hover{
-    border-bottom: 2px solid rgb(0, 0, 0);
+    background:whitesmoke;
 }
 
-.link{
-    text-decoration: none;
-    color: rgb(3, 3, 3);
-}
-.link:hover {
-    background: rgb(253, 253, 253);
-    color: rgb(253, 36, 7);
-    
-   
-}
-.signUp{
-    float: right;
-    margin-right: 10px;
-
-}
-.signIn{
-    float: right;
-    
-
-}
-.signout{
-    float: right;
-    margin-right: 10px;
-
-}
 
 
 .main_body{
+   
     overflow: hidden;
     width: 100%;
     height: 100%;
       
 }
+.login_container{
+    width: 1000px;
+    height: 300px;
+    background: rgb(206, 245, 230);
+    text-align: center;
+    margin: auto;
+
+}
+.form_input{
+
+    margin: 7px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 30px;
+
+}
+.reg_h1{
+    text-align: center;
+}
+.registration_container{
+    width: 900px;
+    height: 400px;
+    background: rgb(245, 235, 206);
+    text-align: left;
+    margin: auto;
+}
+.registration_form{
+    margin: 7px;
+    margin-left: 30%;
+   
+}
+.registration_btn {
+    width: 110px;
+    height: 35px;
+    background: rgb(201, 221, 235);
+    border-radius: 12px;
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 50px;
+    margin-left: 40%;
+
+}
+ .login_btn{
+    width: 110px;
+    height: 35px;
+    background: rgb(201, 221, 235);
+    border-radius: 12px;
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    
+}
+.content_body{
+height: 600px;
+width: 900px;
+margin: auto;
+background: rgba(255, 255, 255, 0.815);
+
+}
+
 .left_body{
 float: left;
 display: inline-block;
@@ -165,13 +151,60 @@ background: white;
     top: 0;
     padding: 10px;
     }
+
+.quiz_btn{
+    float: right;
+    width: 110px;
+    height: 35px;
+    background: rgb(231, 160, 8);
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 10px;
+}    
+.quiz_btn:hover{
+    background: rgb(243, 149, 7);
+    color:rgb(241, 241, 241);
+}
+.backbtn{
+ text-decoration: none;
+ float: left;
+ margin-top: 100px;
+ margin-left: 100px;
+ font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    border: gray;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: rgb(15, 107, 226);
+    color: white;
+    border-radius: 10px;
+
+}
+.backbtn:hover{
+    background: rgb(8, 35, 70);
+    color: white;
+
+}
+.description{
+    margin-top: 120px;
+    margin-right: 30px;
+
+
+}
+
 .footer{
+box-sizing: border-box;
 margin-top: 20px;
 display: block;
 width: 100%;
 height: 250px;
 padding-top:30px ;
-background: black;
+background: rgb(2, 22, 61);
 }
 .footer_wrapper{
 
@@ -221,7 +254,8 @@ margin-bottom: 30px;
     border-radius: 2px;
 }
 .footer_h5{
-    color: rgb(243, 243, 243); 
+    color: rgb(255, 255, 255);
+    font-size: 20px; 
 }
 .footer_p{
     color: rgb(105, 94, 94);
@@ -231,7 +265,7 @@ margin-bottom: 30px;
 .footer_link{
     display: block;
     text-decoration: none;
-    color: rgb(243, 243, 243);
+    color: rgb(255, 209, 6);
     padding: 3px 2px 3px 24px;
     font-size: 14px;
     text-align: left;
@@ -244,7 +278,7 @@ margin-bottom: 30px;
 .footer_link:hover{
     display: block;
     text-decoration: none;
-    color: rgb(219, 54, 54);
+    color: rgb(255, 255, 255);
     padding: 3px 2px 3px 24px;
     font-size: 14px;
     text-align: left;
@@ -298,10 +332,11 @@ margin-bottom: 30px;
 .copyright{
     width: 100%;
     height: 25px;
-    background: red;
+    background: rgb(176, 226, 255);
     text-align: center;
+    border-top: 2px solid rgb(243, 224, 224);  
 }
 .footer__copyright{
-    color: white;
-    
+    color: rgb(0, 0, 0);  
+   
 }

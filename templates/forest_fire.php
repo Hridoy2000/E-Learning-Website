@@ -1,8 +1,9 @@
 {% include 'header.html' %}
+<title>Project Implementation </title>
 <link href="static\css\materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="static\css\style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 {% include 'header1.html' %}
-{% include 'navbar.html' %}
+
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -48,11 +49,12 @@
       </div>
       <br>{{pred}}<br>
 
-      <a href="{{ url_for('project') }}"><strong> Back </strong></a>
-      <br> <br>
-      Here is the Code Description of This  model
-      <a href="{{ url_for('code_description') }}" class = "code_description_link" >Code Description </a>
-      <br>
+      </form>
+	<a href="{{ url_for('project') }}" class = "backbtn"><strong> Back </strong></a>
+	<br> <br>
+	<div class="description">Here is the Code Description of This  model
+	<a href="{{ url_for('code_description') }}" class = "code_description_link" >Code Description </a>
+</div> <br>
     <style>
      a .code_description_link {
        margin-left:20px;
